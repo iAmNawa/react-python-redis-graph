@@ -3,6 +3,7 @@ import COSEBilkent from 'cytoscape-cose-bilkent';
 import React, { Component } from 'react';
 import CytoscapeComponent from 'react-cytoscapejs';
 import './Graph.css';
+import photo from './photos/cat.jpg';
 
 Cytoscape.use(COSEBilkent);
 
@@ -41,7 +42,8 @@ class CytoscapeGraph extends Component {
     this.cy.style()
       .selector('node#five')
         .style({
-          'background-color': '#14A763'
+          'background-image': photo,
+          'background-fit': 'contain'
       })
     .update()
     this.cy.style()
