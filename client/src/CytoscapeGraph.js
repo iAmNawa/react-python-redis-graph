@@ -6,7 +6,7 @@ import './Graph.css';
 
 Cytoscape.use(COSEBilkent);
 
-class Graph extends Component {
+class CytoscapeGraph extends Component {
   componentDidMount() {
     this.cy.style()
       .selector('edge')
@@ -111,4 +111,4 @@ class Graph extends Component {
   }
 }
 
-export default Graph;
+export default CytoscapeGraph;

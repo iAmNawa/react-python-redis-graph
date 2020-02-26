@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Graph from './Graph';
+import CytoscapeGraph from './CytoscapeGraph';
 
 function App() {
   return (
     <div className="App">
-      <Graph />
+      <CytoscapeGraph />
     </div>
   );
 }
