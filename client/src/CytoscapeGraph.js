@@ -11,73 +11,73 @@ class CytoscapeGraph extends Component {
     this.cy.style()
       .selector('edge')
         .style({
-          'line-color': '#0089D0'
+          'line-color': 'white'
       })
     .update()
     this.cy.style()
       .selector('node#one')
         .style({
-          'background-color': '#F37021'
+          'background-color': '#FF652F'
       })
     .update()
     this.cy.style()
       .selector('node#three')
         .style({
-          'background-color': '#F37021'
+          'background-color': '#FF652F'
       })
     .update()
     this.cy.style()
       .selector('node#two')
         .style({
-          'background-color': '#FCB711'
+          'background-color': '#FFE400'
       })
     .update()
     this.cy.style()
       .selector('node#four')
         .style({
-          'background-color': '#FCB711'
+          'background-color': '#FFE400'
       })
     .update()
     this.cy.style()
       .selector('node#five')
         .style({
-          'background-color': '#009925'
+          'background-color': '#14A763'
       })
     .update()
     this.cy.style()
       .selector('node#six')
         .style({
-          'background-color': '#009925'
+          'background-color': '#14A763'
       })
     .update()
     this.cy.style()
       .selector('node#seven')
         .style({
-          'background-color': '#009925'
+          'background-color': '#14A763'
       })
     .update()
     this.cy.style()
       .selector('node#eight')
         .style({
-          'background-color': '#009925'
+          'background-color': '#14A763'
       })
     .update()
     this.cy.style()
       .selector('node#nine')
         .style({
-          'background-color': '#009925'
+          'background-color': '#14A763'
       })
     .update()
     this.cy.style()
       .selector('node#ten')
         .style({
-          'background-color': '#6460AA'
+          'background-color': '#747474'
       })
     .update()
     this.cy.style()
       .selector('node#eleven')
         .style({
-          'background-color': '#6460AA'
+          'background-color': '#747474'
       })
     .update()
   }
@@ -107,7 +107,7 @@ class CytoscapeGraph extends Component {
        { data: { source: 'one', target: 'eleven', label: 'Edge from Node1 to Node11' } },
     ];
     const layout = { name: 'cose-bilkent' };
-    return <CytoscapeComponent cy={(cy) => { this.cy = cy }} elements={elements} layout={layout} style={{ width: '100%', height: '800px', backgroundColor: '#22c6f0' }} />;
+    return <CytoscapeComponent cy={(cy) => { this.cy = cy }} elements={elements} layout={layout} style={{ width: '100%', height: '800px', backgroundColor: 'darkgrey' }} />;
   }
 }
 
