@@ -141,6 +141,7 @@ class CytoscapeGraph extends Component {
     let graph = this.cy
     window.addEventListener('resize', function() {
       graph.fit()
+      console.log(graph.$('#one').position())
     }, true)
   }
   render(){
