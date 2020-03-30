@@ -141,7 +141,9 @@ class CytoscapeGraph extends Component {
     let graph = this.cy
     window.addEventListener('resize', function() {
       graph.fit()
-      console.log(graph.$('#one').position())
+      console.log(graph.nodes().positions(function(node, i) {
+        console.log(node.position())
+      }))
     }, true)
   }
   render(){
@@ -170,13 +172,13 @@ class CytoscapeGraph extends Component {
        { data: { source: 'one', target: 'eleven', label: 'Edge from Node1 to Node11' } },
     ];
     const layout = { name: 'cose-bilkent' };
-      return  <div><CytoscapeComponent
+      return  <div><div className='modal'></div><CytoscapeComponent
                 className="cytoComp"
                 cy={(cy) => { this.cy = cy }}
                 elements={elements}
                 layout={layout}
                 style={{ width: '100%', minHeight: '100vh', backgroundColor: '#e0fbfc' }} />
-              </div>;
+          </div>;
   }
 }
 
