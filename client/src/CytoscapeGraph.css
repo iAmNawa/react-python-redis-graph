@@ -1,0 +1,11 @@
+.cyto-modal {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 5px;
+}
