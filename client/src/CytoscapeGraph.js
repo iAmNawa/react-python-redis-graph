@@ -153,6 +153,12 @@ class CytoscapeGraph extends Component {
         console.log(node.position())
       }))
     }, true)
+    this.cy.bind('click', 'node', function(evt) {
+      console.log(evt.target.id())
+    })
+    this.cy.bind('click', 'edge', function(evt) {
+      console.log(evt.target.id())
+    })
   }
   render(){
     const elements = [
