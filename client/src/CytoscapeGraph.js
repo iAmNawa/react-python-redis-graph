@@ -139,6 +139,13 @@ class CytoscapeGraph extends Component {
           'font-size': '7px',
       })
     .update()
+    this.cy.style()
+      .selector('edge')
+        .style({
+          'label': 'data(label)',
+          'font-size': '7px'
+      })
+    .update()
     let graph = this.cy
     window.addEventListener('resize', function() {
       graph.fit()
