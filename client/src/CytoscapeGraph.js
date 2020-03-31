@@ -11,6 +11,9 @@ import cat from './photos/cat.jpg';
 Cytoscape.use(COSEBilkent);
 
 class CytoscapeGraph extends Component {
+  state = {
+    isOpen: false
+  }
   font_to_char(classname) {
    var span = document.createElement('span');
    span.className = classname;
@@ -25,6 +28,7 @@ class CytoscapeGraph extends Component {
    return char;
  }
   componentDidMount() {
+    Modal.setAppElement('body')
     this.cy.style()
       .selector('edge')
         .style({
@@ -154,13 +158,23 @@ class CytoscapeGraph extends Component {
         console.log(node.position())
       }))
     }, true)
+    let that = this
     this.cy.bind('click', 'node', function(evt) {
-      console.log(evt.target.id())
+      that.setState({ isOpen: true })
     })
     this.cy.bind('click', 'edge', function(evt) {
       console.log(evt.target.id())
     })
   }
+
+  afterOpenModal = () => {
+    console.log('hello')
+  }
+
+  closeModal = () => {
+    console.log('hello')
+  }
+
   render(){
     const elements = [
        { data: { id: 'one', label: 'NODE' }},
@@ -200,7 +214,24 @@ class CytoscapeGraph extends Component {
             cy={(cy) => { this.cy = cy }}
             elements={elements}
             layout={layout}
-            style={{ width: '100%', minHeight: '100vh', backgroundColor: '#e0fbfc' }} />
+            style={{ width: '100%', minHeight: '100vh', backgroundColor: '#e0fbfc' }}
+          />
+          <Modal
+            isOpen={this.state.isOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={{
+              content : {
+                top                   : '50%',
+                left                  : '50%',
+                right                 : 'auto',
+                bottom                : 'auto',
+                marginRight           : '-50%',
+                transform             : 'translate(-50%, -50%)'
+              }
+            }}
+            contentLabel="Example Modal"
+          >Hello</Modal>
         </div>
       )
   }
