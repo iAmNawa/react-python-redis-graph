@@ -11,8 +11,10 @@ CONS
 edge labels are always right side up
 node position is difficult to determine
 adding icons to nodes proves to be difficult
+font-awesome icon randomly not loading
 
 PROS
 looks like OGMA
 functions when clicked on nodes or edges
 can make modals or legend
+Stack overflow and community support
