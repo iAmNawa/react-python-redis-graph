@@ -2,7 +2,8 @@ import Cytoscape from 'cytoscape';
 import COSEBilkent from 'cytoscape-cose-bilkent';
 import React, { Component } from 'react';
 import CytoscapeComponent from 'react-cytoscapejs';
-import './CytoscapeGraph.css'
+import Modal from 'react-modal';
+import './CytoscapeGraph.css';
 import './Graph.css';
 import cat from './photos/cat.jpg';
 
@@ -186,13 +187,22 @@ class CytoscapeGraph extends Component {
        { data: { source: 'one', target: 'eleven', label: 'Edge from Node1 to Node11' } },
     ];
     const layout = { name: 'cose-bilkent' };
-      return  <div><div className='cyto-modal'><li>Node 1</li><li>Node 2</li><li>Node 3</li><li>Node 4</li></div><CytoscapeComponent
-                className="cytoComp"
-                cy={(cy) => { this.cy = cy }}
-                elements={elements}
-                layout={layout}
-                style={{ width: '100%', minHeight: '100vh', backgroundColor: '#e0fbfc' }} />
-          </div>;
+      return (
+        <div>
+          <div className='cyto-legend'>
+            <li>Node 1</li>
+            <li>Node 2</li>
+            <li>Node 3</li>
+            <li>Node 4</li>
+          </div>
+          <CytoscapeComponent
+            className="cytoComp"
+            cy={(cy) => { this.cy = cy }}
+            elements={elements}
+            layout={layout}
+            style={{ width: '100%', minHeight: '100vh', backgroundColor: '#e0fbfc' }} />
+        </div>
+      )
   }
 }
 
